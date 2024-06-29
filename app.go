@@ -7,7 +7,6 @@ import (
 	"github.com/gofiber/fiber/v3"
 	"github.com/gofiber/fiber/v3/middleware/logger"
 	"github.com/gofiber/fiber/v3/middleware/recover"
-	"github.com/joho/godotenv"
 )
 
 func main() {
@@ -19,9 +18,9 @@ func main() {
 		return c.SendString(os.Getenv("APP_NAME"))
 	})
 
-	if err := godotenv.Load(".env"); err != nil {
-		panic(err)
-	}
+	// if err := godotenv.Load(".env"); err != nil {
+	// 	panic(err)
+	// }
 
 	log.Fatal(app.Listen(":3000"))
 }
