@@ -6,6 +6,7 @@ import (
 
 	"github.com/gofiber/fiber/v3"
 	"github.com/gofiber/fiber/v3/middleware/logger"
+	"github.com/gofiber/fiber/v3/middleware/recover"
 	"github.com/joho/godotenv"
 )
 
@@ -13,7 +14,7 @@ func main() {
 	app := fiber.New()
 
 	app.Use(logger.New())
-
+	app.Use(recover.New())
 	app.Get("/", func(c fiber.Ctx) error {
 		return c.SendString(os.Getenv("APP_NAME"))
 	})
