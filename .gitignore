@@ -1,0 +1,20 @@
+# air runs
+/tmp 
+
+# code editors
+/.vscode
+/.idea
+
+# static files
+/public
+
+# build assets
+/assets
+
+# build files
+/dist
+/node_modules
+
+# environment files
+.env
+.env.local
